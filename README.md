@@ -1,9 +1,6 @@
-# AGBRS template
+# `bevy_agb_test`
 
-## A basic template example for agb projects
-
-This makes getting started with a new project for the Game Boy Advance in rust really simple, by providing
-all the boiler plate files for you.
+_Made using the `agb` Template!_
 
 ## Building
 
@@ -34,7 +31,7 @@ or in release mode (recommended for the final version to ship to players)
 cargo build --release
 ```
 
-The resulting file will be in `target/thumbv4t-none-eabi/debug/<your game>` or `target/thumbv4t-none-eabi/release/<your game>` depending on
+The resulting file will be in `target/thumbv4t-none-eabi/debug/bevy_agb_test` or `target/thumbv4t-none-eabi/release/bevy_agb_test` depending on
 whether you did a release or debug build.
 
 If you have `mgba-qt` in your path, you will be able to run your game with
@@ -63,5 +60,5 @@ running on the real thing.
 First build the binary in release mode using the instructions above, then do the following:
 
 ```sh
-agb-gbafix target/thumbv4t-none-eabi/release/<your game> -o <your game>.gba
+agb-gbafix target/thumbv4t-none-eabi/release/bevy_agb_test -o bevy_agb_test.gba
 ```
