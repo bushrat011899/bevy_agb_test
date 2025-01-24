@@ -1,5 +1,5 @@
 [package]
-name = "agb_template"
+name = "bevy_agb_test"
 version = "0.1.0"
 authors = [""]
 edition = "2021"
@@ -7,7 +7,28 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# Agb
 agb = "0.21.1"
+
+# Bevy
+bevy_app = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "bevy_tasks"] }
+bevy_color = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["alloc", "libm"] }
+bevy_diagnostic = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic"] }
+bevy_ecs = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "edge_executor"] }
+bevy_input = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "libm"] }
+# bevy_input_focus = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "libm"] }
+bevy_math = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["libm", "alloc"] }
+bevy_platform_support = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "alloc"] }
+bevy_ptr = { git = "https://github.com/bevyengine/bevy" }
+bevy_state = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "bevy_app"] }
+bevy_tasks = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "edge_executor"] }
+bevy_time = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic"] }
+bevy_transform = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["bevy-support", "libm"] }
+bevy_utils = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["portable-atomic", "alloc"] }
+# bevy_window = { git = "https://github.com/bevyengine/bevy", default-features = false, features = ["libm"] }
+
+# Other
+log = { version = "0.4", default-features = false }
 
 [profile.dev]
 opt-level = 3
