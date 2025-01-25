@@ -1,3 +1,6 @@
 target
 *.gba
 *.sav
+assets/tiny_dungeon/Tiles/**/*
+assets/tiny_dungeon/Tilemap/**/*
+assets/tiny_dungeon/Tiled/**/*

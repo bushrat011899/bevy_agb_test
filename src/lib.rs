@@ -240,7 +240,11 @@ impl ButtonController {
 pub struct GameBoyGamepad;
 
 #[derive(Component, Clone)]
-pub struct Sprite(pub agb::display::object::SpriteVram);
+pub struct Sprite {
+    pub handle: agb::display::object::SpriteVram,
+    pub horizontal_flipped: bool,
+    pub vertical_flipped: bool,
+}
 
 unsafe impl Send for Sprite {}
 unsafe impl Sync for Sprite {}
@@ -259,8 +263,11 @@ fn render_objects(
 
         let position = agb::fixnum::Vector2D { x, y };
 
-        let mut obj = agb::display::object::ObjectUnmanaged::new(sprite.0.clone());
-        obj.show().set_position(position);
+        let mut obj = agb::display::object::ObjectUnmanaged::new(sprite.handle.clone());
+        obj.show()
+            .set_position(position)
+            .set_hflip(sprite.horizontal_flipped)
+            .set_vflip(sprite.vertical_flipped);
 
         let Some(next) = oam_iterator.next() else {
             return;
