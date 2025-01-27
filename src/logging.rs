@@ -1,8 +1,18 @@
 use agb::mgba::{DebugLevel, Mgba};
+use bevy_app::Plugin;
 use log::{Level, LevelFilter, Metadata, Record, SetLoggerError};
 
+#[derive(Default)]
+pub struct AgbLogPlugin;
+
+impl Plugin for AgbLogPlugin {
+    fn build(&self, _app: &mut bevy_app::App) {
+        let _ = init_logging();
+    }
+}
+
 /// Initializes logging through the MGBA Emulator
-pub fn init() -> Result<(), SetLoggerError> {
+pub fn init_logging() -> Result<(), SetLoggerError> {
     // SAFETY: Should be fine
     unsafe { log::set_logger_racy(&LOGGER).map(|()| log::set_max_level_racy(LevelFilter::Info)) }
 }

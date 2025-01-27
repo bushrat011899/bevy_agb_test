@@ -163,7 +163,10 @@ fn flip_player_sprite(mut player: Single<&mut Sprite, With<Player>>, gamepad: Si
     }
 }
 
-fn control_player(player: Single<(&mut Velocity, &mut Jumps), With<Player>>, gamepad: Single<&Gamepad>) {
+fn control_player(
+    player: Single<(&mut Velocity, &mut Jumps), With<Player>>,
+    gamepad: Single<&Gamepad>,
+) {
     let (mut velocity, mut jumps) = player.into_inner();
 
     if gamepad.pressed(GamepadButton::DPadLeft) {
